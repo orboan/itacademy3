@@ -27,6 +27,9 @@ public abstract class AbsStaffMember {
 
 	public abstract void pay();
 	
+	public abstract void checkSalary(double minSal, double maxSal) 
+			throws Exception;
+	
 	@Override
 	public String toString() {
 		return  "name=" + this.name + ", "
