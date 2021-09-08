@@ -1,13 +1,15 @@
 package com.jobs.domain;
 
 public class Boss extends Employee{
+	
 	public Boss(String name, String address, String phone, 
-			double salaryPerMonth,IPaymentRate paymentRate) throws Exception {
-		super(name, address, phone, salaryPerMonth, paymentRate);	
-		//Màxims i mínim hardcoded
-		//es podria guardar al repo igual que hem fet amb els rates
-		//-1 indica que no hi ha màxim
-		this.checkSalary(8000,-1);
+			double salaryPerMonth,IPaymentRate paymentRate,
+			IPaymentIrpf paymentIrpf) throws Exception {
+		super(name, address, phone, salaryPerMonth, paymentRate, paymentIrpf);	
+
+		//Ho movem al controlador, on té més sentit 
+		//posar-hi regles de negoci
+//		this.checkSalary(8000,-1);
 	}
 	
 	@Override

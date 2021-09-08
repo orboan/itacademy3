@@ -6,8 +6,11 @@ public abstract class AbsStaffMember {
 	protected String name;
 	protected String address;
 	protected String phone;
-	protected double totalPaid=0;
-
+	
+	//Salaris nets
+	protected double totalPaidPerMonth=0;
+	protected double totalPaidPerYear=0;
+	
 	private static int COUNTER_MEMBERS = 1;
 
 	public AbsStaffMember(String name, String address, String phone) throws Exception {
@@ -27,13 +30,14 @@ public abstract class AbsStaffMember {
 
 	public abstract void pay();
 	
-	public abstract void checkSalary(double minSal, double maxSal) 
-			throws Exception;
+	//Ho movem al controlador, on té més sentit 
+//	public abstract void checkSalary(double minSal, double maxSal) 
+//			throws Exception;
 	
 	@Override
 	public String toString() {
-		return  "name=" + this.name + ", "
-				+ "address=" + this.address + ", "
-				+ "phone=" + this.phone;		
+		return  "Nom: " + this.name + " | "
+				+ "Adreça: " + this.address + " | "
+				+ "Telèfon: " + this.phone;		
 	}
 }
